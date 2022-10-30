@@ -1,0 +1,545 @@
+@import url("https://fonts.googleapis.com/css2?family=Besley:ital,wght@0,400;1,400;1,500&display=swap");
+
+:root {
+  --main: #ff0000;
+  --box_shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.8);
+  --border: 0.1rem solid rgba(0, 0, 0, 0.6);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Besley", serif;
+  border: none;
+  outline: none;
+  text-decoration: none;
+  transition: 0.2s all linear;
+}
+*::selection {
+  background: var(--main);
+  color: #000;
+}
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-padding-top: 6rem;
+  scroll-behavior: smooth;
+}
+section {
+  padding: 2rem 7%;
+}
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  padding: 0.9rem 3rem;
+  cursor: pointer;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  margin-top: 1rem;
+}
+.btn:hover {
+  background: var(--main);
+}
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--main);
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+/* Header/Navbar Start */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  display: flex;
+  padding: 1.2rem 7%;
+  align-items: center;
+  z-index: 1000;
+}
+header .logo {
+  color: #000;
+  font-size: 2.5rem;
+  margin-right: auto;
+}
+header .logo span {
+  color: var(--main);
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+header .navbar a {
+  color: #333;
+  margin-right: 2rem;
+  font-size: 1.7rem;
+}
+header .navbar a:hover {
+  color: var(--main);
+}
+header .icons i {
+  height: 4.5rem !important;
+  background: #eee;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  text-align: center;
+  color: #000;
+  font-size: 1.7rem;
+  cursor: pointer;
+  margin-left: 0.7rem;
+  border-radius: 50%;
+}
+header .icons i:hover {
+  background: var(--main);
+  color: #fff;
+}
+#MenuBars {
+  display: none;
+}
+header .SearchForm {
+  background: #fff;
+  position: absolute;
+  box-shadow: var(--box_shadow);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  top: 110%;
+  right: 7%;
+  height: 6rem;
+  width: 50rem;
+  padding: 1rem;
+  transition: 0.2s;
+  display: none;
+}
+header .SearchForm.active {
+  display: flex;
+}
+header .SearchForm #SearchBox {
+  width: 100%;
+  border: var(--border);
+  padding: 1rem;
+  height: 100%;
+  color: #000;
+}
+header .SearchForm label {
+  cursor: pointer;
+  color: #000;
+  font-size: 2rem;
+  padding-right: 0.5rem;
+  padding-left: 1rem;
+}
+/* Header/Navbar End */
+
+/* Home Section Start */
+.home {
+  background: url(images/home.png);
+  width: 100%;
+  min-height: 80vh;
+  background-position: center;
+  background-size: cover;
+  display: grid;
+  place-items: center;
+  padding-top: 8rem;
+}
+.home .content {
+  text-align: center;
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  border-radius: 0.5rem;
+  padding: 3rem;
+  max-width: 50rem;
+}
+.home .content h3 {
+  font-size: 4rem;
+  font-weight: 700;
+}
+.home .content p {
+  color: #333;
+  font-size: 1.7rem;
+  padding: 1rem 0;
+  line-height: 1.5;
+}
+/* Home Section End */
+
+/* Blog Post Section Start */
+.blogPost {
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+  gap: 1.5rem;
+  background: #eee;
+}
+.blogPost .post {
+  width: 100%;
+  background: #fff;
+  padding: 2rem;
+  border: var(--border);
+  box-shadow: var(--box_shadow);
+  margin-bottom: 1.5rem;
+  border-radius: 0.5rem;
+}
+.blogPost .post img {
+  width: 100%;
+  height: 40rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+.blogPost .post .Date {
+  padding-top: 2rem;
+  color: var(--main);
+  font-size: 1.5rem;
+}
+.blogPost .post .title {
+  font-size: 2.5rem;
+  padding-top: 1.5rem;
+}
+.blogPost .post p {
+  color: #222;
+  padding: 1rem 0;
+  line-height: 1.7;
+  font-size: 1.6rem;
+}
+.blogPost .post .Links {
+  border-top: var(--border);
+  display: flex;
+  align-items: center;
+  padding-top: 1.5rem;
+  margin-top: 0.5rem;
+}
+.blogPost .post .Links .user {
+  margin-right: auto;
+}
+.blogPost .post .Links .icon {
+  padding-right: 1rem;
+}
+.blogPost .post .Links a {
+  color: #222;
+  font-size: 1.5rem;
+}
+.blogPost .post .Links a:hover {
+  color: var(--main);
+}
+
+/* SideBar */
+.blogPost .SideBar .box {
+  border: var(--border);
+  margin-bottom: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+}
+/* About */
+.blogPost .SideBar .box .title {
+  text-align: center;
+  background: #000;
+  font-size: 2rem;
+  color: #fff;
+  padding: 1.5rem;
+}
+.blogPost .SideBar .box .about {
+  text-align: center;
+  padding: 1rem 1.5rem;
+}
+.blogPost .SideBar img {
+  height: 15rem;
+  width: 15rem;
+  object-fit: cover;
+  margin: 1rem 0;
+  border-radius: 50%;
+}
+.blogPost .SideBar .box h3 {
+  color: var(--main);
+  font-size: 2rem;
+}
+.blogPost .SideBar .box p {
+  font-size: 1.5rem;
+  color: #222;
+  line-height: 1.5;
+  padding: 1rem;
+}
+.blogPost .SideBar .box .icons {
+  padding: 1rem 0;
+}
+.blogPost .SideBar .box .icons a {
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  border-radius: 50%;
+  background: #000;
+  color: #fff;
+  font-size: 1.7rem;
+  margin: 0 0.1rem;
+}
+.blogPost .SideBar .box .icons a:hover {
+  background: var(--main);
+}
+
+/* Popular Tags */
+.blogPost .SideBar .box .tags {
+  padding: 1rem;
+}
+.blogPost .SideBar .box .tags a {
+  color: #000;
+  display: inline-block;
+  font-size: 1.5rem;
+  padding: 1rem 1.5rem;
+  margin: 0.5rem;
+  border: var(--border);
+  border-radius: 0.5rem;
+}
+.blogPost .SideBar .box .tags a:hover {
+  border: none;
+  background: var(--main);
+  color: #fff;
+}
+
+/* Popular Posts */
+.blogPost .SideBar .popular_post {
+  padding: 1rem 2rem;
+}
+.blogPost .SideBar .popular_post a {
+  padding: 1rem 0;
+  display: block;
+}
+.blogPost .SideBar .popular_post a:hover {
+  box-shadow: var(--box_shadow);
+  padding: 1rem;
+}
+.blogPost .SideBar .popular_post a h3 {
+  color: #000;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+.blogPost .SideBar .popular_post a:hover h3 {
+  color: var(--main);
+}
+.blogPost .SideBar .popular_post a span {
+  font-size: 1.5rem;
+  color: #222;
+}
+.blogPost .SideBar .popular_post a span i {
+  padding: 0.2rem;
+}
+
+/* Categories  */
+.blogPost .SideBar .box .category {
+  padding: 1rem 1.5rem;
+}
+.blogPost .SideBar .box .category a {
+  color: #000;
+  padding: 0.4rem 0;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blogPost .SideBar .box .category a:hover {
+  box-shadow: var(--box_shadow);
+  padding: 1rem;
+}
+.blogPost .SideBar .box .category a span {
+  color: #fff;
+  background: #222;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+}
+.blogPost .SideBar .box .category a:hover {
+  color: var(--main);
+}
+.blogPost .SideBar .box .category a:hover span {
+  background: var(--main);
+}
+/* Categories  */
+
+/* Blog Post Section End */
+
+/* Contact Form Start */
+.contact {
+  background: url(images/contact.jpg);
+  background-size: cover;
+  background-position: center;
+  object-fit: cover;
+  background-attachment: fixed;
+}
+.contact form {
+  background: #fff;
+  box-shadow: var(--box_shadow);
+  border-radius: 0.5rem;
+  margin: 2rem auto;
+  max-width: 70rem;
+  padding: 2rem;
+}
+.contact form h3 {
+  color: #000;
+  text-align: center;
+  font-size: 3rem;
+  padding-bottom: 1.5rem;
+}
+.contact form .inputBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.contact form input,
+textarea {
+  background: #eee;
+  width: 100%;
+  padding: 1rem;
+  margin: 0.7rem 0;
+  border-radius: 0.5rem;
+  color: #000;
+  font-size: 1.7rem;
+}
+.contact form .inputBox input {
+  width: 49%;
+}
+/* Contact Form End */
+
+/* Footer Start */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer .text {
+  font-size: 2rem;
+  color: #000;
+  padding: 1rem 0;
+}
+.footer .text span {
+  color: var(--main);
+}
+.footer .Follow {
+  padding: 1rem 0;
+}
+.footer .Follow a {
+  color: #fff;
+  background: #000;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  width: 4.5rem;
+  border-radius: 50%;
+  font-size: 1.7rem;
+  margin: 0 0.1rem;
+  text-align: center;
+}
+.footer .Follow a:hover {
+  color: var(--main);
+}
+/* Footer End */
+
+/* Theme Toggle */
+.themeToggle {
+  position: fixed;
+  top: 10rem;
+  right: -20rem;
+  background: #000;
+  text-align: center;
+  z-index: 10000;
+  width: 20rem;
+}
+.themeToggle.active {
+  right: 0;
+}
+.themeToggle h3 {
+  color: #fff;
+  font-size: 2rem;
+  padding: 1rem 0;
+}
+.themeToggle .buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 1rem;
+}
+.themeToggle .buttons .themeBtn {
+  height: 5rem;
+  width: 5rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.themeToggle .ToggleBtn {
+  position: absolute;
+  top: 0;
+  left: -5.9rem;
+  padding: 1.3rem 1.5rem;
+  background: #000;
+  cursor: pointer;
+}
+.themeToggle .ToggleBtn i {
+  color: #fff;
+  font-size: 3rem;
+  animation: spin 1.5s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(360deg);
+  }
+}
+/* Theme Toggle */
+/* Media Query */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  header {
+    padding: 1.5rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+@media (max-width: 768px) {
+  #MenuBars {
+    display: initial;
+  }
+  header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-top: var(--border);
+    border-bottom: var(--border);
+    background: #fff;
+    display: none;
+  }
+  header .navbar.active {
+    display: initial;
+  }
+  header .navbar a {
+    display: block;
+    border: var(--border);
+    margin: 1.5rem;
+    padding: 1.5rem;
+    background: #f7f7f7;
+    box-shadow: var(--box_shadow);
+  }
+  header .SearchForm {
+    width: 100%;
+    border-radius: 0;
+    border-top: var(--border);
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  /* Blog Post */
+  .blogPost {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .blogPost .post img {
+    height: 30rem;
+  }
+}
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+  .contact form .inputBox input {
+    width: 100%;
+  }
+}
